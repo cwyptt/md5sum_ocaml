@@ -1,4 +1,5 @@
 (executable
  (public_name md5sum_ocaml)
- (name main)
- (libraries md5sum_ocaml core core_unix))
+ (name md5)
+ (libraries md5sum_ocaml core core_unix.command_unix)
+ (preprocess (pps ppx_jane)))
