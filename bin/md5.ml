@@ -5,28 +5,26 @@ open Core
 (* md5sum is a command-line utility in Unix-like operating systems that implements the MD5 algorithm. *)
 
 
+(* let do_hash file =
+ *   Md5.digest_file_blocking file |> Md5.to_hex |> print_endline
+ *
+ * let filename_param =
+ *   let open Command.Param in
+ *   anon ("filename" %: string) *)
 
-(* let do_hash file = *)
-(*   Md5.digest_file_blocking file |> Md5.to_hex |> print_endline *)
 
 let do_hash file =
   let hash = Md5.digest_file_blocking file |> Md5.to_hex in
   print_endline (hash ^ " " ^ file)
 
-(* let filename_param = *)
-(*   let open Command.Param in *)
-(*   anon ("filename" %: string) *)
-
 let command =
   Command.basic
     ~summary: "Generate an MD5 hash of the input data lol"
-    ~readme:(fun () -> "This program generates an MD5 hash, which is a unique digital fingerprint, for any given file. Use it to quickly check if a file has been changed or to confirm its authenticity.")
+    ~readme:(fun () -> "This program generates an MD5 hash, which is a unique digital fingerprint, for any given file.
+                        Use it to quickly check if a file has been changed or to confirm its authenticity.")
     Command.Param.(map
                      (anon ("filename" %: string))
                      ~f:(fun filename () -> do_hash filename))
 
 let () =
-  Command_unix.run
-    ~version:"1.0"
-    ~build_info:"RWO"
-    command
+  Command_unix.run ~version:"1.0" ~build_info:"RWO" command
