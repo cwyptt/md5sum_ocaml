@@ -1,0 +1,6 @@
+# dune init proj md5sum_ocaml
+# OCAMLPARAM: unset
+# Shared cache: enabled-except-user-rules
+# Shared cache location: /home/alex/.cache/dune/db
+# Workspace root: /home/alex/dev/md5sum_ocaml
+# Auto-detected concurrency: 16

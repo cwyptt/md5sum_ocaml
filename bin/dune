@@ -1,0 +1,4 @@
+(executable
+ (public_name md5sum_ocaml)
+ (name main)
+ (libraries md5sum_ocaml))

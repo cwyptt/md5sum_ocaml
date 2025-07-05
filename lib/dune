@@ -1,0 +1,2 @@
+(library
+ (name md5sum_ocaml))
