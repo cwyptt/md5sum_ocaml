@@ -19,7 +19,7 @@
  (name md5sum_ocaml)
  (synopsis "A short synopsis")
  (description "A longer description")
- (depends ocaml core core_unix)
+ (depends ocaml core_unix core)
  (tags
   ("add topics" "to describe" your project)))
 
